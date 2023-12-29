@@ -1,0 +1,64 @@
+package org.mikerosends.gridpainter;
+
+
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+
+import static org.mikerosends.gridpainter.Grid.cellSize;
+import static org.mikerosends.gridpainter.Grid.padding;
+
+public class Cell {
+
+    int row;
+    int col;
+    Rectangle rectangle;
+    private boolean painted;
+
+    public Cell(int row, int col){
+        this.row = row;
+        this.col = col;
+        rectangle = new Rectangle(col * cellSize + padding, row * cellSize, cellSize, cellSize);
+        rectangle.draw();
+    }
+
+    public void paint() {
+        painted = true;
+        rectangle.fill();
+    }
+
+    public void erase() {
+        painted = false;
+        rectangle.draw();
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
+    }
+
+    public Rectangle getRectangle() {
+        return rectangle;
+    }
+
+    public void setRectangle(Rectangle rectangle) {
+        this.rectangle = rectangle;
+    }
+
+    public boolean isPainted() {
+        return painted;
+    }
+
+    public void setPainted(boolean painted) {
+        this.painted = painted;
+    }
+}
