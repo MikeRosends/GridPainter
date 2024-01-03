@@ -13,9 +13,9 @@ public class Cursor extends Cell {
         RIGHT
     }
 
-    public Cursor(int row, int col) {
+    public Cursor() {
         super(0, 0);
-        rectangle.setColor(Color.BLACK);
+        rectangle.setColor(Color.PINK);
         paint();
     }
 
@@ -30,13 +30,15 @@ public class Cursor extends Cell {
     }
 
     public void moveLeft() {
-        col++;
+        col--;
         rectangle.translate(-cellSize, 0);
     }
 
     public void moveRight() {
-        col--;
+        col++;
         rectangle.translate(+cellSize, 0);
     }
+
+
 
 }

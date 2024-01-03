@@ -31,34 +31,16 @@ public class Cell {
     }
 
     public int getRow() {
+        System.out.println("Getting Row: " + row);
         return row;
     }
 
-    public void setRow(int row) {
-        this.row = row;
-    }
-
     public int getCol() {
+        System.out.println("Getting Col: " + col);
         return col;
-    }
-
-    public void setCol(int col) {
-        this.col = col;
-    }
-
-    public Rectangle getRectangle() {
-        return rectangle;
-    }
-
-    public void setRectangle(Rectangle rectangle) {
-        this.rectangle = rectangle;
     }
 
     public boolean isPainted() {
         return painted;
-    }
-
-    public void setPainted(boolean painted) {
-        this.painted = painted;
     }
 }

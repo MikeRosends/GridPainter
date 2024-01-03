@@ -1,5 +1,7 @@
 package org.mikerosends.gridpainter;
 
+import java.util.Arrays;
+
 public class Grid {
 
     public static final int cellSize = 20;
@@ -19,20 +21,35 @@ public class Grid {
     }
 
     public void drawGrid(int rows, int cols) {
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; c++) {
-                cells[r][c] = new Cell(r, c);
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                cells[row][col] = new Cell(row, col);
             }
         }
     }
 
 
     public void clear() {
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; i < cols; j++) {
-                cells[i][j].erase();
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; row < cols; col++) {
+                cells[row][col].erase();
             }
         }
+    }
+
+    public Cell getCell(int row, int col) {
+        System.out.println("row: " + row + " col " + col);
+        return cells[row][col];
+    }
+
+    public int getRows() {
+        System.out.println("The number of rows is: " + rows);
+        return rows;
+    }
+
+    public int getCols() {
+        System.out.println("The number of cols is: " + cols);
+        return cols;
     }
 
 }
